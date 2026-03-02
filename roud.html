@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الرحلة - وصلني</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0d9488',
+                            light: '#14b8a6',
+                            dark: '#0f766e',
+                            bg: '#f0fdfa',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<!-- Navbar -->
+<header class="fixed w-full top-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white">
+                <i class="fa-solid fa-bus-simple"></i>
+            </div>
+            <span class="font-bold text-brand text-xl">وصلني</span>
+        </a>
+
+        <a href="index.html" class="text-gray-500">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+    </div>
+</header>
+
+<!-- Content -->
+<section class="pt-24 pb-16 px-4">
+<div class="max-w-md mx-auto">
+
+    <!-- Route Summary -->
+    <div class="bg-white rounded-3xl p-6 shadow-xl shadow-brand/10 mb-6 reveal">
+        <div class="flex justify-between items-center mb-4">
+            <div>
+                <h2 class="font-bold text-lg">فيكتوريا → محطة الرمل</h2>
+                <p class="text-xs text-gray-500">المسافة: 8.4 كم</p>
+            </div>
+        </div>
+
+        <div class="bg-brand-bg rounded-2xl p-4 flex justify-between">
+            <div>
+                <p class="text-brand font-bold text-sm">أفضل اختيار: بديل الترام </p>
+                <p class="text-xs text-gray-500">اقتصادي</p>
+            </div>
+            <div class="text-left">
+                <p class="font-extrabold text-lg">9 جنيه</p>
+                <p class="text-xs text-gray-500">60 دقيقة</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transport Options -->
+
+    <!-- Bus -->
+    <div class="bg-white rounded-2xl p-5 shadow mb-4 reveal transport-option cursor-pointer" data-mode="bus">
+        <div class="flex justify-between mb-3">
+            <div class="flex gap-2 items-center text-brand">
+                <i class="fa-solid fa-bus-simple"></i>
+                <span class="font-bold text-sm">بديل الترام</span>
+            </div>
+            <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">الأرخص لكنة الابطأ</span>
+        </div>
+
+        <div class="grid grid-cols-3 text-center text-xs">
+            <div>
+                <p class="text-gray-400">السعر</p>
+                <p class="font-bold">9 جنيه</p>
+            </div>
+            <div>
+                <p class="text-gray-400">الوقت</p>
+                <p class="font-bold">60 دقيقة</p>
+            </div>
+            <div>
+                <p class="text-gray-400">الراحة</p>
+                <p class="font-bold">6/10</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taxi -->
+    <div class="bg-white rounded-2xl p-5 shadow mb-4 reveal transport-option cursor-pointer" data-mode="taxi">
+        <div class="flex justify-between mb-3">
+            <div class="flex gap-2 items-center text-yellow-500">
+                <i class="fa-solid fa-taxi"></i>
+                <span class="font-bold text-sm">تاكسي</span>
+            </div>
+            <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full">الأغلى لكنه الأسرع</span>
+        </div>
+
+        <div class="grid grid-cols-3 text-center text-xs">
+            <div>
+                <p class="text-gray-400">السعر</p>
+                <p class="font-bold">60 جنيه</p>
+            </div>
+            <div>
+                <p class="text-gray-400">الوقت</p>
+                <p class="font-bold">40 دقيقة</p>
+            </div>
+            <div>
+                <p class="text-gray-400">الراحة</p>
+                <p class="font-bold">9/10</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Microbus -->
+    <div class="bg-white rounded-2xl p-5 shadow mb-6 reveal transport-option cursor-pointer" data-mode="microbus">
+        <div class="flex justify-between mb-3">
+            <div class="flex gap-2 items-center text-purple-500">
+                <i class="fa-solid fa-van-shuttle"></i>
+                <span class="font-bold text-sm">ميكروباص</span>
+            </div>
+            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">متوسط</span>
+        </div>
+
+        <div class="grid grid-cols-3 text-center text-xs">
+            <div>
+                <p class="text-gray-400">السعر</p>
+                <p class="font-bold">10 جنيه</p>
+            </div>
+            <div>
+                <p class="text-gray-400">الوقت</p>
+                <p class="font-bold">35 دقيقة</p>
+            </div>
+            <div>
+                <p class="text-gray-400">الراحة</p>
+                <p class="font-bold">6/10</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="bg-white rounded-3xl p-6 shadow-xl shadow-brand/10 mb-6 reveal">
+        <h3 class="font-bold text-sm mb-4">خط سير الرحلة</h3>
+
+        <div class="space-y-4 text-xs text-gray-600" id="timeline-steps">
+            <div class="flex gap-3">
+                <div class="w-3 h-3 bg-brand rounded-full mt-1"></div>
+                <p id="timeline-step-1">الانطلاق من فيكتوريا</p>
+            </div>
+            <div class="flex gap-3">
+                <div class="w-3 h-3 bg-gray-300 rounded-full mt-1"></div>
+                <p id="timeline-step-2">المرور بمحطة سموحة</p>
+            </div>
+            <div class="flex gap-3">
+                <div class="w-3 h-3 bg-gray-300 rounded-full mt-1"></div>
+                <p id="timeline-step-3">الوصول إلى محطة الرمل</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map -->
+    <div class="rounded-3xl overflow-hidden shadow-2xl mb-6 reveal">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop"
+             class="w-full h-52 object-cover">
+    </div>
+
+    <!-- CTA -->
+    <a href="index.html" class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-2xl shadow-lg shadow-brand/30 transition transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-check"></i>
+        اختر هذا المسار
+    </a>
+
+</div>
+</section>
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 50) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Change timeline data when selecting transport option
+    const timelineSteps = [
+        document.getElementById('timeline-step-1'),
+        document.getElementById('timeline-step-2'),
+        document.getElementById('timeline-step-3'),
+    ];
+
+    const routeData = {
+        bus: [
+            'الانطلاق من فيكتوريا - موقف الحافلات',
+            'المرور عبر شارع ابو قير',
+            'الوصول إلى محطة الرمل - موقف الحافلات',
+        ],
+        taxi: [
+            'الانطلاق من فيكتوريا - موقف الحافلات',
+            'المرور عبر شارع ابو قير',
+            'الوصول إلى محطة الرمل - موقف الحافلات',
+        ],
+        microbus: [
+            "المشي الى موقف ميدان الساعة ",
+            "ركوب ميكروباص الى المنشية (يسسر عبر طريق الكورنيش)",
+            "النزول عند محطة الرمل"
+        ],
+    };
+
+    const transportCards = document.querySelectorAll('.transport-option');
+
+    transportCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const mode = card.getAttribute('data-mode');
+            const steps = routeData[mode];
+            if (!steps) return;
+
+            steps.forEach((text, index) => {
+                if (timelineSteps[index]) {
+                    timelineSteps[index].textContent = text;
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
